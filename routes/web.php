@@ -14,16 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('', [CobaController::class, 'index']);
 
-Route::get('/coba', function () {
-    return view('coba');
-});
+Route::get('/friends', [CobaController::class, 'index']);
 
-Route::get('/coba/{no}', [CobaController::class, 'coba][']);
+Route::get('/friends/create', [CobaController::class, 'create']);
 
-Route::get('/test', [CobaController::class, 'index']);
-
-Route::get('/test/{ke}', [CobaController::class, 'urutan']);
+Route::post('/friends', [CobaController::class, 'store']);
